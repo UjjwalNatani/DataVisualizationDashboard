@@ -1,7 +1,5 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion';
-
-//import from files
 import BarChart from '../charts/BarChart';
 import PolarChart from '../charts/PolarChart';
 import LineChart from '../charts/LineChart';

@@ -5,16 +5,9 @@ import axios from 'axios';
 
 // Returning a bootstrap dropdown and just a button
 const Filters = ({ setMainData, uniqueDataArrays }) => {
-    //function to call the getDataFromDB function and passing the 'year' to it entered by the user
-    // const handleSelect = (event, data) => {
-    //     getDataFromDB(event, data)
-    //     // console.log(event);
-    // };
-    // func to fetch the filtered data by year and update the state
     const getDataFromDB = async (event, data) => {
         try {
-            console.log(`http://localhost:8000/api/data/${data}/${event}`)
-            const response = await axios.get(`http://localhost:8000/api/data/${data}/${event}`);
+            const response = await axios.get(`https://datavisualizationdashboard-264k.onrender.com/api/data/${data}/${event}`);
             setMainData(response.data.data)
         }
         catch (e) {
@@ -24,7 +17,7 @@ const Filters = ({ setMainData, uniqueDataArrays }) => {
     // func to handle the "reset filters button" by making another api call and update state 
     const handleReset = async () => {
         try {
-            const response = await axios.get("http://localhost:8000/api/data/all");
+            const response = await axios.get("https://datavisualizationdashboard-264k.onrender.com/api/data/all");
             setMainData(response.data.data)
         }
         catch (e) {
