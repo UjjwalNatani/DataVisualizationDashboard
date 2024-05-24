@@ -10,11 +10,6 @@ import { mongoDB } from './database/index.js'
 //creates a new instance of an Express application
 const app = express();
 
-//setting up config.env file so that we can use content of it
-config({
-    path: "./config.env"
-})
-
 //connecting server and database, just call this func^
 mongoDB();
 
@@ -29,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //set 'credentials: true' to pass --> headers, cookies, etc to browser/frontend
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://datavisualizationdashboard1.netlify.app',
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }))
